@@ -37,12 +37,13 @@ let orm = {
       cb(data);
     })
   },
-  update: (db,condition,cb) => {
+  update: (id,cb) => {
+    console.log(id)
     let query = "UPDATE burgers "
-    query += "SET devoured "
-    query += "WHERE ?"
+    query += "SET devoured = true "
+    query += `WHERE id=${id}`
     console.log(query)
-    connection.query(query, [condition], (err,result) => {
+    connection.query(query, (err,result) => {
       if (err) {throw err}
       cb(result)
     })

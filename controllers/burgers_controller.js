@@ -25,15 +25,12 @@ router.post("/api/burger/", (req, res) => {
 });
 
 router.put("/api/burger/:id", (req, res) => {
-  var condition = "id = " + req.params.id;
+  var id = req.params.id;
 
-  console.log("condition", condition);
+  console.log("condition", id);
 
   modelBurger.update(
-    {
-      devoured: true,
-    },
-    condition,
+    id,
     (result) => {
       if (result.changedRows === 0) {
         return res.status(404).end();

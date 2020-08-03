@@ -13,7 +13,7 @@ let modelBurger = {
     });
   },
   update: function(condition, cb) {
-    orm.update("burgers", condition, function (res) {
+    orm.update(condition, function (res) {
       cb(res);
     });
   },

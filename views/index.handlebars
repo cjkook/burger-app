@@ -5,10 +5,26 @@
 <ul>
 	{{!-- use handlebar partials  --}}
 	{{#each burgers}}
-	<li>
-		<p>Name: {{this.name}}</p>
-		<button type="submit" id=`${this.id}`>Devour</button>
-	</li>
+		{{#unless devoured}}
+			<li>
+				<p>Name: {{this.name}}</p>
+				<button type="submit" class="update" data-id="{{this.id}}">Devour</button>
+			</li>
+		{{/unless}}
+	{{/each}}
+</ul>
+
+<br><br>
+Eaten Burgers
+<hr>
+<ul>
+	{{!-- use handlebar partials  --}}
+	{{#each burgers}}
+		{{#if devoured}}
+			<li>
+				<p>Name: {{this.name}}</p>
+			</li>
+		{{/if}}
 	{{/each}}
 </ul>
 

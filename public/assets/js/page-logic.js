@@ -21,39 +21,18 @@ $(function() {
       }
     );
   });
-  
 
-
-
-
-
-
-
-
-
-
-  // ! 
-  $("#update").on("submit", function (event) {
+  $(".update").on("click", function (event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-  
-    var id = $("[name=id]").val().trim();
-  
-    var updatedMovie = {
-      movie: $("#updatemovie [name=movie]").val().trim()
-    };
-  
-    // Send the PUT request.
-    $.ajax("/api/movies/" + id, {
+    var id = $(this).data("id");
+    
+    $.ajax(`/api/burger/${id}`, {
       type: "PUT",
-      data: updatedMovie
-    }).then(
-      function () {
-        console.log("updated id ", id);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+    }).then(()=>{
+      console.log("burger eaten")
+      location.reload()
+    })
   });
 })
 
