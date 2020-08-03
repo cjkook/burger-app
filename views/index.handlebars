@@ -1,0 +1,22 @@
+<h1>Burger Eatz</h1>
+
+<h3>Eat, or add, a burger.</h3>
+
+<ul>
+	{{!-- use handlebar partials  --}}
+	{{#each burgers}}
+	<li>
+		<p>Name: {{this.name}}</p>
+		<button type="submit" id=`${this.id}`>Devour</button>
+	</li>
+	{{/each}}
+</ul>
+
+{{!-- go directly to server --}}
+{{!-- <form action="/" method="POST"> --}}
+<form>
+	{{!-- this wish name can be accessed on the backend as req.body.task --}}
+	<textarea type="text" id="name"></textarea>
+
+	<button type="submit" id="submit">Submit</button>
+</form>

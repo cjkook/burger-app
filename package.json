@@ -1,0 +1,32 @@
+{
+  "name": "burger-app",
+  "version": "1.0.0",
+  "description": "An app for creating and storing burgers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjkook/burger-app.git"
+  },
+  "keywords": [
+    "burger",
+    "js",
+    "node",
+    "mysql",
+    "express"
+  ],
+  "author": "Corey J. Kothenbeutel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjkook/burger-app/issues"
+  },
+  "homepage": "https://github.com/cjkook/burger-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "mysql": "^2.18.1"
+  }
+}
